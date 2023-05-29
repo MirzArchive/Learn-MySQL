@@ -2,11 +2,11 @@ DELIMITER $$
 CREATE PROCEDURE check_not_attend()
 BEGIN
     SELECT *
-    FROM employee
+    FROM playground.employee
     WHERE id NOT IN
           (SELECT a.id
-           FROM employee a
-                    INNER JOIN attendance b ON a.id = b.employee_id);
+           FROM playground.employee a
+                    INNER JOIN playground.attendance b ON a.id = b.employee_id);
 END $$
 DELIMITER ;
 
